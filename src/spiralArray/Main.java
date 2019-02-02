@@ -3,32 +3,32 @@ package spiralArray;
 public class Main {
 
 	private static int[][] intArray = new int[][] {
-		/*
+		
 		{1,2,3},
 		{4,5,6},
 		{7,8,9}
-		*/
 		
 		
+		/*
 		{1,2,3,4},
 		{5,6,7,8},
 		{9,10,11,12},
 		{13,14,15,16},
+		*/
 		
+		/*
+		{1,2,3,4,5},
+		{6,7,8,9,10},
+		{11,12,13,14,15},
+		{16,17,18,19,20},
+		{21,22,23,24,25},
+		*/
 		
 	};
-	/* 
-	->
-	|
-	¡
-	<-
-	^
-	|
-	*/
 	
 	public static void main(String[] args) {
 		
-		System.out.println("intArray.length : "+intArray.length);
+		System.out.println("Traverse a 2d array in a spiral form:");
 		
 		int startRow = 0;
 		int endRow = intArray.length-1;
@@ -38,13 +38,12 @@ public class Main {
 		
 		int i = 0;
 		
-		while( startRow < endRow && startCol < endCol ) {
+		while( startRow <= endRow && startCol <= endCol ) {
 			
-			
-			
+			i = startCol;
 			while(i < endCol) {
 				
-				System.out.print(intArray[startRow][i]+", ");
+				System.out.print(intArray[startRow][i]+" ");
 				i++;
 			}
 			i = startRow;
@@ -53,36 +52,28 @@ public class Main {
 			
 			while(i <= endRow) {
 				
-				System.out.print(intArray[i][endCol]+", ");
+				System.out.print(intArray[i][endCol]+" ");
 				i++;
 			}
 			i = endCol-1;
 			endCol--;
 			
-			
 			while(i >= startCol) {
 				
-				System.out.print(intArray[endRow][i]+", ");
+				System.out.print(intArray[endRow][i]+" ");
 				i--;
 			}
 			i = endRow-1;
 			endRow--;
 			
-			
-			
-			while(i > startRow) {
+			while(i >= startRow) {
 				
-				System.out.print(intArray[i][startCol]+", ");
+				System.out.print(intArray[i][startCol]+" ");
 				i--;
 			}
 			i = startCol;
 			startCol++;
 			
-			
-			
-			
 		}
-		
-		
 	}
 }
